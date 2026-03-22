@@ -1,7 +1,7 @@
 export default function CollectionCard({ item }) {
     return (
-        <div className="min-w-[200px] max-w-[200px] rounded-lg overflow-hidden bg-zinc-900 active:scale-95 transition-transform cursor-pointer">
-            <div className="w-full h-[180px] bg-zinc-800">
+        <div className="w-full rounded-xl overflow-hidden bg-zinc-900 cursor-pointer active:scale-95 transition-transform">
+            <div className="w-full aspect-[3/4] bg-zinc-800 overflow-hidden">
                 <img
                     src={item.image_url}
                     alt={item.title}
@@ -9,9 +9,9 @@ export default function CollectionCard({ item }) {
                     onError={(e) => e.target.style.display = 'none'}
                 />
             </div>
-            <div className="p-2">
-                <p className="text-white text-sm font-semibold truncate">{item.title}</p>
-                <p className="text-zinc-500 text-xs mt-0.5">...</p>
+            <div className="p-2.5 flex items-center justify-between">
+                <p className="text-white text-sm font-semibold truncate flex-1">{item.title}</p>
+                <span className="text-zinc-500 text-sm ml-2 flex-shrink-0">···</span>
             </div>
         </div>
     )
