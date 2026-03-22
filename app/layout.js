@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Watch Brasil — Sports Streaming",
+  title: "Case — Sports Streaming",
   description: "Homepage personalizada de uma plataforma de streaming esportivo com arquitetura SDUI.",
 };
 
