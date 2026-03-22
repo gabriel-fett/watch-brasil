@@ -8,7 +8,7 @@ export default function Banner({ shelf }) {
 
     return (
         <div className="relative w-full overflow-hidden bg-black">
-            <div className="relative w-full h-[380px]">
+            <div className="relative w-full h-[380px] md:h-[480px] lg:h-[560px]">
                 <img
                     src={item.image_url}
                     alt={item.title}
@@ -18,10 +18,16 @@ export default function Banner({ shelf }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
 
                 <div className="absolute bottom-8 left-0 right-0 px-6 flex flex-col items-center">
-                    <h1 className="text-white font-black text-2xl uppercase text-center leading-tight mb-5">
+                    <h1 className="text-white font-black text-2xl md:text-3xl lg:text-4xl uppercase text-center leading-tight mb-2">
                         {item.title}
                     </h1>
-                    <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-md transition-colors w-full justify-center max-w-xs">
+                    {/* Subtitle abaixo do título, acima do botão */}
+                    {item.subtitle && (
+                        <p className="text-zinc-300 text-sm text-center mb-5 max-w-xs leading-snug">
+                            {item.subtitle}
+                        </p>
+                    )}
+                    <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-md transition-colors w-full justify-center max-w-xs md:max-w-sm">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                             <polygon points="5,3 19,12 5,21" />
                         </svg>
@@ -36,8 +42,7 @@ export default function Banner({ shelf }) {
                         <button
                             key={i}
                             onClick={() => setActive(i)}
-                            className={`h-1.5 rounded-full transition-all ${i === active ? 'w-8 bg-white' : 'w-2 bg-zinc-600'
-                                }`}
+                            className={`h-1.5 rounded-full transition-all ${i === active ? 'w-8 bg-white' : 'w-2 bg-zinc-600'}`}
                         />
                     ))}
                 </div>

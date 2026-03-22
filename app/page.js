@@ -8,7 +8,7 @@ import ShelfRenderer from '@/components/ShelfRenderer'
 
 function LoadingSkeleton() {
   return (
-    <div className="px-4 py-4 space-y-6">
+    <div className="px-6 py-4 space-y-6">
       <div className="w-full h-[300px] bg-zinc-800 rounded-lg animate-pulse" />
       <div>
         <div className="h-4 w-40 bg-zinc-800 rounded animate-pulse mb-3" />
@@ -16,15 +16,6 @@ function LoadingSkeleton() {
           <div className="min-w-[160px] h-[140px] bg-zinc-800 rounded-lg animate-pulse" />
           <div className="min-w-[160px] h-[140px] bg-zinc-800 rounded-lg animate-pulse" />
           <div className="min-w-[160px] h-[140px] bg-zinc-800 rounded-lg animate-pulse" />
-        </div>
-      </div>
-      <div>
-        <div className="h-4 w-40 bg-zinc-800 rounded animate-pulse mb-3" />
-        <div className="grid grid-cols-2 gap-3">
-          <div className="h-[160px] bg-zinc-800 rounded-lg animate-pulse" />
-          <div className="h-[160px] bg-zinc-800 rounded-lg animate-pulse" />
-          <div className="h-[160px] bg-zinc-800 rounded-lg animate-pulse" />
-          <div className="h-[160px] bg-zinc-800 rounded-lg animate-pulse" />
         </div>
       </div>
     </div>
@@ -44,10 +35,8 @@ export default function Home() {
   }, [activePage])
 
   return (
-    // Projeto desenvolvido com foco em mobile-first
-    // Para melhor experiência, acesse pelo celular ou use o modo responsivo do navegador
-    <main className="w-full min-h-screen bg-black">
-      <div className="max-w-md mx-auto">
+    <main className="w-full min-h-screen bg-black flex justify-center">
+      <div className="w-full max-w-[448px] md:max-w-[720px] lg:max-w-[1024px] bg-black min-h-screen md:shadow-[0_0_0_1px_#27272a]">
         <Header />
         <CategoryTabs activePage={activePage} onSelect={setActivePage} />
 
@@ -60,7 +49,10 @@ export default function Home() {
         ) : (
           <div className="pb-10">
             {shelves.map(shelf => (
-              <ShelfRenderer key={shelf.id} shelf={shelf} />
+              // py-6 garante respiro entre cada seção
+              <div key={shelf.id} className="py-6">
+                <ShelfRenderer shelf={shelf} />
+              </div>
             ))}
           </div>
         )}

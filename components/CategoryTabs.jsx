@@ -11,9 +11,10 @@ export default function CategoryTabs({ activePage, onSelect }) {
                 <button
                     key={cat.page}
                     onClick={() => onSelect(cat.page)}
-                    className={`px-6 py-1.5 rounded-full text-sm font-bold tracking-wide transition-all ${activePage === cat.page
-                            ? 'bg-blue-600 text-white'
-                            : 'text-zinc-400 hover:text-white'
+                    // rounded-md = bordas levemente arredondadas, visual mais quadrado
+                    className={`px-6 py-1.5 rounded-md text-sm font-bold tracking-wide transition-all ${activePage === cat.page
+                        ? 'bg-blue-600 text-white'
+                        : 'text-zinc-400 hover:text-white'
                         }`}
                 >
                     {cat.label}

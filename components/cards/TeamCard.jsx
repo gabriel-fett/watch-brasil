@@ -1,7 +1,7 @@
 export default function TeamCard({ item }) {
     return (
         <div className="flex flex-col items-center min-w-[120px] max-w-[120px] cursor-pointer active:scale-95 transition-transform">
-            <div className="w-[90px] h-[90px] rounded-full overflow-hidden bg-zinc-800 border-2 border-zinc-700">
+            <div className="w-[90px] h-[90px] rounded-full overflow-hidden border-2 border-zinc-700">
                 <img
                     src={item.image_url}
                     alt={item.title}

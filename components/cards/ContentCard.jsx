@@ -1,14 +1,16 @@
-export default function ContentCard({ item }) {
+export default function ContentCard({ item, fullWidth = false }) {
     return (
-        <div className="min-w-[220px] max-w-[220px] rounded-xl overflow-hidden bg-zinc-900 cursor-pointer active:scale-95 transition-transform">
-            <div className="relative w-full h-[130px] bg-zinc-800 overflow-hidden">
+        <div className={`${fullWidth ? 'w-full' : 'min-w-[180px] max-w-[180px]'} rounded-xl overflow-hidden bg-zinc-900 cursor-pointer active:scale-95 transition-transform`}>
+            <div className="relative w-full h-[90px] md:h-[130px] overflow-hidden">
+                {/* z-index menor na imagem para o badge ficar na frente */}
                 <img
                     src={item.image_url}
                     alt={item.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover z-0"
                     onError={(e) => e.target.style.display = 'none'}
                 />
-                <span className="absolute top-2 left-2 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded tracking-wider">
+                {/* z-30 garante que o badge sempre aparece sobre a imagem */}
+                <span className="absolute top-2 left-2 z-30 bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded tracking-wider drop-shadow-md">
                     LIVE  NOW
                 </span>
             </div>

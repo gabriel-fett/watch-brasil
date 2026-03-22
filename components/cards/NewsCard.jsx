@@ -1,7 +1,7 @@
 export default function NewsCard({ item }) {
     return (
         <div className="flex gap-3 w-full cursor-pointer active:scale-[0.99] transition-transform">
-            <div className="w-[120px] h-[80px] rounded-lg bg-zinc-800 flex-shrink-0 overflow-hidden">
+            <div className="w-[120px] h-[80px] rounded-lg flex-shrink-0 overflow-hidden">
                 <img
                     src={item.image_url}
                     alt={item.title}
