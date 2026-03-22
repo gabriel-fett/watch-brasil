@@ -2,7 +2,7 @@
 
 Frontend MVP de uma plataforma de streaming esportivo com arquitetura Server-Driven UI (SDUI).
 
-Desenvolvido como teste técnico para a vaga de Frontend Jr — Innovation Team.
+Desenvolvido como teste técnico para a vaga de Frontend Jr — Watch Brasil.
 
 ## Sobre o projeto
 
