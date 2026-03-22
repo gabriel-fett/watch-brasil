@@ -10,6 +10,14 @@ A homepage é composta por seções dinâmicas (shelves) cujo layout, ordem e co
 
 Cada shelf retornada pela API possui um campo `layout` (`Banner`, `Carousel` ou `List`) e um campo `domain` por item (`Content`, `Team`, `News` ou `Collection`). O frontend decide qual componente renderizar com base nesses valores — nenhuma página é estática.
 
+## Mobile First
+
+O projeto foi desenvolvido com foco total em mobile. A experiência principal é pensada para telas de celular — layout, espaçamento, scroll horizontal nos carrosséis e tamanho dos cards foram todos calibrados para dispositivos móveis.
+
+Em telas maiores (tablet e desktop), o conteúdo se adapta progressivamente: o container centraliza na tela, os carrosséis viram grids e o banner ganha mais altura. Mas o ponto de partida sempre é o mobile.
+
+> **Recomendação:** Para melhor experiência, acesse pelo celular ou ative o modo responsivo do navegador (F12 → ícone de dispositivo móvel).
+
 ## Arquitetura SDUI
 
 ```
